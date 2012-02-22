@@ -12,7 +12,7 @@ class PDF::Toolkit
       options = args.last.is_a?(Hash) ? args.pop : {}
       args << "dont_ask"
       args << options
-      result = call_program(:pdftk,*args,&block)
+      result = call_program("pdftk", *args,&block)
       return block_given? ? $?.success? : result
     end
 
